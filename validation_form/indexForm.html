@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>RegEx Form</title>
+        
+        <style>
+body{
+    font-family: arial;
+    color: #333;
+}
+h1{
+    font-weight: normal;
+    margin: 20px auto;
+    text-align: center;
+}
+form{
+    width: 500px;
+    margin: 20px auto;
+}
+input{
+    display: block;
+    padding: 8px 16px;
+    font-size: 2em;
+    margin: 10px auto;
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 10px;
+    border: 3px solid #ccc;
+    outline: none !important;
+}
+/* validation styles */
+input.valid {
+    border-color: #36cc36;}
+input.invalid {
+    border-color: red;
+
+}
+input + p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    text-align: center;
+    margin: 0 10px;
+    color: red;
+    opacity: 0;
+    height: 0;
+}
+input.invalid + p{
+    opacity: 1;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+        </style>
+    </head>
+    <body>
+        <h1>New User Signup</h1>
+        <form>
+
+            <input type="text" name="username" placeholder="username">
+            <p>Username must contain 5 - 12 characters</p>
+
+            <input type="text" name="email" placeholder="email">
+            <p>Email must be a valid address, e.g. me@mydomain.com</p>
+
+            <input type="password" name="password" placeholder="password">
+            <p>Password must alphanumeric (@, _ and - are also allowed) and be 8 - 20 characters</p>
+
+            <input type="text" name="cellphone" placeholder="cellphone">
+            <p>Telephone must be a valid SA cellphone number (10 digits)</p>
+
+            <input type="text" name="slug" placeholder="profile slug">
+            <p>Slug must contain only lowercase letters, numbers and hyphens and be 8 - 20 characters</p>
+
+        </form>
+        <script>
+            const inputs = document.querySelectorAll('input');
+const patterns ={
+    username: /^\w{5,12}$/i,
+    cellphone:/^\d{10}$/,
+    password:/^[\w@-]{8,20}$/,
+    email:/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+    slug: /^[(a-z)\d-]{8,20}$/
+}
+//validation function
+function validate(field, regex){
+   
+if (regex.test(field.value)){
+    field.className = 'valid';
+}
+else {field.className = 'invalid'
+}
+}
+// Adding an event listener
+inputs.forEach((input) => {
+    input.addEventListener('keyup', (e) => {
+        console.log(e.target.attributes.name.value);
+        validate(e.target, patterns[e.target.attributes.name.value])
+    
+});
+});
+        </script>
+    </body>
+</html>

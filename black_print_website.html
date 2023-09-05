@@ -1,0 +1,232 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Black Print Gallery</title>
+<style>
+
+    a.About:link {color: white;}
+    a.Work:link{color: white;}
+    a.Contact:link {color: white;}
+    a.About:visited {color: green;}
+    a.Work:visited {color: green;}
+    a.Contact:visited{color: green;}    
+    a.About:hover{color: orange;
+    font-size: 200%;
+text-decoration: underline;
+font: bold;}
+a.Work:hover{color: orange;
+    font-size: 200%;
+text-decoration: underline;
+font: bold;}
+a.Contact:hover{color: orange;
+    font-size: 200%;
+text-decoration: underline;
+font: bold;}
+a.About:active {color:blue}
+a.Work:active {color:blue}
+a.Contact:active {color:blue}
+        body {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+        } 
+
+      /* header {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        } */
+       
+
+        nav {
+            font-size: x-large;
+            background-color: #444;
+            text-align: center;
+            padding: 10px;
+        }
+
+ 
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+ 
+
+        .content {
+            padding: 20px;
+            
+        }
+ 
+
+        .gallery {
+            margin: 10px;
+            border: none;
+            float: left;
+            width: calc(33.33% - 20px);
+            box-sizing: border-box;
+        }
+
+ 
+
+        .gallery:hover {
+            border: none;
+            transform: scale(1.5);
+            z-index: 2;
+            
+        
+           
+        }
+
+ 
+
+        .gallery img {
+            transition: transform 0.2s;
+            width: 100%;
+            height: auto;
+            display: inline;
+            border-radius: 5px;
+        }
+        .description {display: none;}
+.price {display: none;}
+.size {display: none;}
+
+.gallery:hover .description {display: block;}
+.gallery:hover .price {display: block;} 
+
+.gallery:hover .size {display: block;} 
+.gallery:hover .content {filter: blur(8px);
+-webkit-filter: blur(8px);}
+
+        .desc {
+            padding: 15px;
+            text-align: center;
+        }
+
+ 
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #f4f7f6;
+        }
+        footer:hover {background-color: #444;
+        color:#f4f7f6;
+    }
+    .main {text-align: center;}
+        
+</style>
+</head>
+<body class="main">
+<!--<header>
+<h1>Black Print Gallery</h1>
+<p>Your Source for Stunning Artwork</p>
+</header>-->
+<header>
+    <img src="black_print logo.jpg" alt="logo image" width="400px" height="400px">
+</header>
+<div>
+ 
+
+    <nav>
+<a class="About" href="#about">About Us</a>
+<a class="Work" href="#work">Our Work</a>
+<a class="Contact" href="#contact">Contact</a>
+</nav>
+</div>
+
+ 
+
+    <div class="content" id="about">
+<h3>About Us</h3>
+<p>Welcome to Black Print Gallery, where we showcase a diverse collection of captivating artwork. Our passion for art drives us to create unique pieces that inspire and engage. Discover our journey and the artists behind the masterpieces.</p>
+</div>
+
+ 
+
+    <div class="content" id="work">
+<h3>My Work</h3>
+<div class="gallery">
+<a href="IMG_20230606_095819.jpg" target="_blank">
+<img src="IMG_20230606_095819.jpg" alt="Linocut image of a lion" id="lion">
+</a>
+<p class="description">Printed linocut on 50gsm fabrino paper</p>
+<p class="size">Size A5</p>
+<p class="price">Price R700</p>
+</div>
+
+ 
+
+        <div class="gallery">
+<a href="IMG_20230606_095933.jpg" target="_blank">
+<img src="IMG_20230606_095933.jpg" alt="Linocut image of a rhino" id="rhino">
+</a>
+<p class="description">Printed linocut on 50gsm fabrino paper</p><br>
+<p class="size">Size A5</p>
+<p class="price">Price R700</p>
+</div>
+
+ 
+
+        <div class="gallery">
+<a href="Aprons.jpg" target="_blank">
+<img src="Aprons.jpg" alt="Aprons with screenprinted floral artwork" id="Aprons">
+</a>
+<p class="description">Aprons with screenprinted floral artwork</p>
+<p class="price">Out of stock</p>
+</div>
+</div>
+<section>
+<br>
+    <div class="content" id="contact">
+<h3>Contact Us</h3>
+<p>Like what you see? Get in touch with us. We'd love to hear from you!</p>
+<br>
+<form>
+<label for=button>Get in touch</label>
+    <input type="submit" id="button">
+</form>
+</section>
+
+<!--
+<form action="/my-handling-form-page" method="post">
+    <ul>
+      <li>
+          <label for="name">Name:</label><br>
+          <input type="text" id="name" name="user_name" />
+      </li>
+      <br>
+      <li>
+          <label for="mail">Email:</label><br>
+          <input type="email" id="email" name="user_email" />
+      </li>
+      <br>
+      <li>
+        <label for="number">Cell number</label> <br>
+        <input type="number" id="number" name="number" placeholder="(+27)***-***-****"/>
+      </li>
+      <br>
+      <li>
+          <label for="msg">Message:</label><br>
+          <textarea id="msg" name="user_message"></textarea>
+      </li>
+      <br>
+    <div>  
+        <input type="submit" id="button">
+      </div> -->
+</div>
+<button id="submit" onclick = "document.getElementById('submit').style.backgroundColor ='red'">Submit</button>
+<script>
+    
+</script>
+
+    <footer>
+<p>&copy; Makabongwe Metuso | Made with ❤ in Salt River</p>
+</footer>
+</body>
+</html>
